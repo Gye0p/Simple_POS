@@ -1,0 +1,155 @@
+================================================================================
+  CONVENIENCE STORE POS — QUICK USER GUIDE
+  (One-page reference for store owner and cashiers)
+================================================================================
+
+
+OPENING THE SYSTEM EACH DAY
+--------------------------------------------------------------------------------
+
+  1. Open XAMPP → Start Apache and MySQL (both green).
+  2. Open Chrome or Edge.
+  3. Go to:  http://localhost/pos_system/
+  4. Log in with your username and password.
+
+
+TWO TYPES OF USERS
+--------------------------------------------------------------------------------
+
+  ADMIN (Owner/Manager)              CASHIER (Staff)
+  -------------------------          -------------------------
+  Dashboard — today's summary        Cashier — ring up sales
+  Products — add/edit items          (Only sees Cashier screen)
+  Categories — organize products
+  Users — manage staff accounts
+  Sales — view past transactions
+  Reports — sales & inventory reports
+  Settings — store name on receipt
+
+
+HOW TO MAKE A SALE (CASHIER)
+--------------------------------------------------------------------------------
+
+  1. Log in → you arrive at the Cashier screen.
+  2. The barcode box is ready — scan a product (or type barcode + Enter).
+  3. The item appears in the cart on the left.
+  4. Scan more items as needed.
+     - Same item scanned twice? Quantity increases automatically.
+     - Wrong item? Click the trash icon to remove it.
+     - Need more/less? Use the + and - buttons.
+  5. On the right side:
+     - Check the TOTAL amount.
+     - Apply discount if needed (₱ amount or %).
+     - Type how much cash the customer gave (Cash Tendered).
+     - Check the CHANGE shown.
+  6. Click CHECKOUT.
+  7. Receipt prints automatically — give it to the customer.
+  8. Click "New Sale" to serve the next customer.
+
+  To cancel everything: click "Clear Cart".
+
+
+ADDING A NEW PRODUCT (ADMIN)
+--------------------------------------------------------------------------------
+
+  1. Go to Products in the sidebar.
+  2. Click "Add Product".
+  3. Fill in:
+     - Barcode  (the number on the package — must be unique)
+     - Name     (e.g. Coca-Cola 1.5L)
+     - Category
+     - Price    (selling price in pesos)
+     - Cost     (what you paid — optional, for your records)
+     - Stock    (how many you have on hand)
+     - Unit     (pcs, bottle, pack, sachet, etc.)
+  4. Click "Save Product".
+
+  RESTOCKING:
+  - Click "Bulk Stock" on the Products page.
+  - Enter positive numbers to add stock (e.g. +24 for a new case).
+  - Click "Save Adjustments".
+
+
+CHECKING SALES & REPORTS (ADMIN)
+--------------------------------------------------------------------------------
+
+  SALES page:
+  - See every transaction with date, OR number, cashier, and total.
+  - Filter by date range.
+  - Click the receipt icon to reprint any sale.
+
+  REPORTS page:
+  - Total revenue and transactions for a date range.
+  - Top selling products.
+  - Sales per cashier.
+  - Low stock items that need reordering.
+  - Print or export to CSV.
+
+
+LOW STOCK ALERTS
+--------------------------------------------------------------------------------
+
+  - Products with stock below 5 (default) show a warning on the Dashboard.
+  - Cashiers see a "Low Stock" badge when scanning low items.
+  - Check Reports → Low Stock Report for the full list.
+
+
+RECEIPT INFORMATION
+--------------------------------------------------------------------------------
+
+  Each receipt shows:
+  - Your store name, address, and TIN
+  - OR number (e.g. OR-20250606-0001)
+  - Date, time, and cashier name
+  - List of items with prices
+  - Subtotal, discount (if any), total
+  - Cash tendered and change
+  - Thank-you message at the bottom
+
+  Update store details anytime under Settings.
+
+
+TIPS FOR SMOOTH OPERATION
+--------------------------------------------------------------------------------
+
+  [ ] Keep XAMPP Apache and MySQL running during store hours.
+  [ ] Always focus on the barcode box before scanning.
+  [ ] Count cash tendered carefully — system computes change for you.
+  [ ] Restock products when Dashboard shows low stock alerts.
+  [ ] Back up the database weekly (see INSTALL.txt).
+  [ ] Do not share the admin password — create cashier accounts instead.
+
+
+COMMON QUESTIONS
+--------------------------------------------------------------------------------
+
+  Q: Scanner not working?
+  A: Click inside the barcode box first, then scan. Check USB connection.
+
+  Q: Receipt not printing?
+  A: Make sure the thermal printer is on and set as default in Windows.
+
+  Q: Product not found when scanning?
+  A: The barcode may not be in the system — add it under Products (admin).
+
+  Q: Wrong price on receipt?
+  A: Edit the product under Products. New price applies to future sales.
+
+  Q: Internet needed?
+  A: No. The system runs entirely on your computer (offline/local).
+
+
+QUICK REFERENCE
+--------------------------------------------------------------------------------
+
+  System URL:     http://localhost/pos_system/
+  Default admin:  admin / admin123  (change after setup!)
+  Start server:   XAMPP → Apache + MySQL ON
+  Make a sale:    Cashier → Scan → Cash → Checkout
+  Add product:    Products → Add Product
+  View sales:     Sales (filter by date)
+  Store info:     Settings
+
+================================================================================
+  For installation help, see INSTALL.txt
+================================================================================

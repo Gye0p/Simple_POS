@@ -1,0 +1,197 @@
+================================================================================
+  CONVENIENCE STORE POS SYSTEM — INSTALLATION GUIDE
+================================================================================
+
+Thank you for using this Point of Sale (POS) system. Follow the steps below to
+install it on a Windows PC with XAMPP.
+
+
+--------------------------------------------------------------------------------
+REQUIREMENTS
+--------------------------------------------------------------------------------
+
+  - Windows 10 or 11
+  - XAMPP (includes Apache, MySQL, and PHP 8+)
+    Download: https://www.apachefriends.org/
+  - Google Chrome or Microsoft Edge (recommended)
+  - USB barcode scanner (optional — acts as a keyboard)
+  - Thermal receipt printer (optional — prints via browser)
+
+
+--------------------------------------------------------------------------------
+STEP 1 — INSTALL XAMPP
+--------------------------------------------------------------------------------
+
+  1. Download and install XAMPP for Windows.
+  2. During install, allow Apache and MySQL through Windows Firewall if asked.
+  3. Open the XAMPP Control Panel.
+
+
+--------------------------------------------------------------------------------
+STEP 2 — COPY THE POS FILES
+--------------------------------------------------------------------------------
+
+  1. Extract the pos_system folder from the ZIP file you received.
+  2. Copy the entire pos_system folder to:
+
+         C:\xampp\htdocs\pos_system\
+
+  3. The folder should contain subfolders such as: config, auth, pages, ajax,
+     includes, assets, receipt, and database.
+
+
+--------------------------------------------------------------------------------
+STEP 3 — START THE SERVER
+--------------------------------------------------------------------------------
+
+  1. Open XAMPP Control Panel.
+  2. Click START next to Apache.
+  3. Click START next to MySQL.
+  4. Both should show a green "Running" status.
+
+
+--------------------------------------------------------------------------------
+STEP 4 — CREATE THE DATABASE
+--------------------------------------------------------------------------------
+
+  1. Open your browser and go to:  http://localhost/phpmyadmin
+  2. Click the "SQL" tab at the top.
+  3. Open the file:  database/pos_db.sql  (inside the pos_system folder).
+  4. Copy ALL the text and paste it into the SQL box in phpMyAdmin.
+  5. Click "Go" at the bottom right.
+  6. You should see database "pos_db" created with 6 tables:
+     users, categories, products, sales, sale_items, settings
+
+  OPTIONAL — Demo products for testing:
+  - Repeat steps 3–5 using database/sample_products.sql
+  - This adds sample categories and 10 test products with barcodes.
+
+
+--------------------------------------------------------------------------------
+STEP 5 — VERIFY THE INSTALLATION
+--------------------------------------------------------------------------------
+
+  1. Open your browser and go to:  http://localhost/pos_system/
+  2. You should see the login page.
+  3. Log in with the default admin account:
+
+         Username:  admin
+         Password:  admin123
+
+  4. You should see the Dashboard with the sidebar menu.
+
+  TROUBLESHOOTING:
+  - "Database connection failed" → Make sure MySQL is running in XAMPP.
+  - Blank page or errors → Check that files are in C:\xampp\htdocs\pos_system\
+  - phpMyAdmin won't open → Start Apache in XAMPP Control Panel.
+
+
+--------------------------------------------------------------------------------
+STEP 6 — FIRST-TIME SETUP (RECOMMENDED)
+--------------------------------------------------------------------------------
+
+  After logging in as admin, do the following:
+
+  1. SETTINGS — Enter your store name, address, TIN, and receipt footer.
+  2. CATEGORIES — Add your product categories (e.g. Beverages, Snacks).
+  3. PRODUCTS — Add your products with barcodes, prices, and stock quantities.
+  4. USERS — Create cashier accounts for your staff.
+  5. CHANGE PASSWORD — Edit the admin account and set a new secure password.
+
+
+--------------------------------------------------------------------------------
+DAILY USE
+--------------------------------------------------------------------------------
+
+  Every day before opening the store:
+
+  1. Open XAMPP Control Panel.
+  2. Start Apache and MySQL.
+  3. Open browser → http://localhost/pos_system/
+  4. Cashiers log in and use the Cashier screen to process sales.
+  5. Owner/admin can check Dashboard, Sales, and Reports anytime.
+
+  At end of day:
+  - Leave XAMPP running, or stop Apache/MySQL if you prefer.
+  - Sales data is saved in the database automatically.
+
+
+--------------------------------------------------------------------------------
+BARCODE SCANNER SETUP
+--------------------------------------------------------------------------------
+
+  1. Plug the USB barcode scanner into the computer.
+  2. Windows will detect it as a keyboard (no extra software needed).
+  3. On the Cashier screen, click inside the barcode input field.
+  4. Scan a product — the barcode appears and the item is added to the cart.
+  5. Most scanners send "Enter" after the barcode, which triggers the scan.
+
+
+--------------------------------------------------------------------------------
+RECEIPT PRINTER SETUP
+--------------------------------------------------------------------------------
+
+  1. Connect your thermal printer via USB.
+  2. Install the printer driver if Windows prompts you.
+  3. Set the thermal printer as the default printer in Windows Settings.
+  4. Process a test sale on the Cashier screen and click Checkout.
+  5. The receipt will open in a popup and print automatically.
+  6. Use "Print Again" in the receipt window if needed.
+
+
+--------------------------------------------------------------------------------
+BACKUP (IMPORTANT)
+--------------------------------------------------------------------------------
+
+  Back up your data regularly:
+
+  1. Open http://localhost/phpmyadmin
+  2. Click "pos_db" in the left sidebar.
+  3. Click the "Export" tab.
+  4. Click "Go" to download a backup file (.sql).
+  5. Save the file to a USB drive or cloud storage weekly.
+
+  To restore: Import the .sql file using phpMyAdmin's Import tab.
+
+
+--------------------------------------------------------------------------------
+DEFAULT LOGIN
+--------------------------------------------------------------------------------
+
+  Admin account (change password after first login!):
+
+    Username:  admin
+    Password:  admin123
+
+  Cashier accounts are created by the admin under Users.
+
+
+--------------------------------------------------------------------------------
+FOLDER STRUCTURE (REFERENCE)
+--------------------------------------------------------------------------------
+
+  pos_system/
+  ├── config/db.php          Database connection settings
+  ├── auth/                  Login and logout
+  ├── pages/                 All main screens
+  ├── ajax/                  Background data processing
+  ├── includes/              Shared layout and helpers
+  ├── assets/                CSS, JavaScript, styling
+  ├── receipt/               Receipt print view
+  ├── database/              SQL files for setup
+  ├── index.php              Main entry point
+  ├── INSTALL.txt            This file
+  └── USER_GUIDE.txt         Quick guide for daily use
+
+
+--------------------------------------------------------------------------------
+SUPPORT
+--------------------------------------------------------------------------------
+
+  For technical support, contact your developer:
+
+    Name:   _______________________________
+    Phone:  _______________________________
+    Email:  _______________________________
+
+================================================================================
